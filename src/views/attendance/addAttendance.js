@@ -88,7 +88,7 @@ const AddAttendance = () => {
         //console.log(selectFile);
         if (csvtype === 1) {
             axios
-                .post('http://localhost:4000/api/v1/employee/attendance/csv', csvData, config)
+                .post('http://52.86.15.74:4000/api/v1/employee/attendance/csv', csvData, config)
                 .then((res) => {
                     //console.log(res);
                     settext('File upload successfully!');
@@ -117,7 +117,7 @@ const AddAttendance = () => {
 
         if (csvtype === 2) {
             axios
-                .post('http://localhost:4000/api/v1/employee/attendance/csvbulk', csvData, config)
+                .post('http://52.86.15.74:4000/api/v1/employee/attendance/csvbulk', csvData, config)
                 .then((res) => {
                     console.log("res", res.data);
                     settext('File upload successfully!');
@@ -126,7 +126,7 @@ const AddAttendance = () => {
                     toast.success('Allowance updated successfully');
 
                     res.data.DATA.map((i) => (
-                        axios.post(` http://localhost:4000/api/v1/employee/extra`,
+                        axios.post(` http://52.86.15.74:4000/api/v1/employee/extra`,
                             {
                                
                                extraMachineWork:i?.['Extra Machine Work'],
@@ -168,7 +168,7 @@ const AddAttendance = () => {
 
         if (csvtype === 3) {
             axios
-                .post('http://localhost:4000/api/v1/employee/attendance/csvbulk', csvData, config)
+                .post('http://52.86.15.74:4000/api/v1/employee/attendance/csvbulk', csvData, config)
                 .then((res) => {
                     console.log("res", res.data);
                     settext('File upload successfully!');
@@ -177,7 +177,7 @@ const AddAttendance = () => {
                     toast.success('Allowance updated successfully');
 
                     res.data.DATA.map((i) => (
-                        axios.post(` http://localhost:4000/api/v1/employee/allowances`,
+                        axios.post(` http://52.86.15.74:4000/api/v1/employee/allowances`,
                             {
                                 data: [
                                     {

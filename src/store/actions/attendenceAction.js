@@ -34,7 +34,7 @@ export const addAttendence = (userData) => async (dispatch) => {
             }
         };
 
-        const { data } = await axios.post(' http://localhost:4000/api/v1/employee/attendance', userData, config);
+        const { data } = await axios.post(' http://52.86.15.74:4000/api/v1/employee/attendance', userData, config);
 
         console.log("data", data);
 
@@ -60,7 +60,7 @@ export const myAttendence = (page, month, year, keyword) => async (dispatch) => 
         dispatch({ type: GET_ATTENDENCE_REQUEST });
 
         const x = await axios.get(
-            `http://localhost:4000/api/v1/employee/attendance/mylist/${month + 1}/${year}?page=${page}&searchBy=${'fullName,UAN'}${keyword ? '&keyword=' + keyword : ''
+            `http://52.86.15.74:4000/api/v1/employee/attendance/mylist/${month + 1}/${year}?page=${page}&searchBy=${'fullName,UAN'}${keyword ? '&keyword=' + keyword : ''
             }`,
             {
                 withCredentials: true
@@ -88,7 +88,7 @@ export const updateAllowances = (data, UAN, attendanceYear, attendanceMonth) => 
         dispatch({ type: UPDATE_ALLOWANCE_REQUEST });
 
         const x = await axios.post(
-            ` http://localhost:4000/api/v1/employee/allowances`,
+            ` http://52.86.15.74:4000/api/v1/employee/allowances`,
             {
                 data: data,
                 UAN: UAN,
@@ -123,7 +123,7 @@ export const myEmployeeAttendence = (employee, month, year) => async (dispatch) 
     try {
         dispatch({ type: GET_SINGLE_ATTENDENCE_REQUEST });
 
-        const { data } = await axios.get(` http://localhost:4000/api/v1/employee/attendance/mylist/${month + 1}/${year}/${employee}`, {
+        const { data } = await axios.get(` http://52.86.15.74:4000/api/v1/employee/attendance/mylist/${month + 1}/${year}/${employee}`, {
             withCredentials: true
         });
 
@@ -151,7 +151,7 @@ export const myEmployeeAttendenceOvertime = (employee, attendanceMonth, attendan
             }
         };
         const { data } = await axios.post(
-            ` http://localhost:4000/api/v1/employee/attendance/updateovertime`,
+            ` http://52.86.15.74:4000/api/v1/employee/attendance/updateovertime`,
             { employee, attendanceMonth, attendanceYear, overtime, date },
             config
         );
@@ -179,7 +179,7 @@ export const myEmployeeAttendenceOvertimeStatus = (employee, attendanceMonth, at
             }
         };
         const { data } = await axios.post(
-            ` http://localhost:4000/api/v1/employee/attendance/updateovertimestatus`,
+            ` http://52.86.15.74:4000/api/v1/employee/attendance/updateovertimestatus`,
             { employee, attendanceMonth, attendanceYear, isOvertime, date },
             config
         );

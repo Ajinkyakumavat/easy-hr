@@ -49,7 +49,7 @@ const AttendanceReport = () => {
     React.useEffect(() => {
         axios
             .get(
-                `http://localhost:4000/api/v1/employee/attendance/mylist/${date.getMonth() + 1}/${date.getFullYear()}?limit=${9999999999}`,
+                `http://52.86.15.74:4000/api/v1/employee/attendance/mylist/${date.getMonth() + 1}/${date.getFullYear()}?limit=${9999999999}`,
                 {
                     withCredentials: true
                 }
@@ -75,7 +75,7 @@ const AttendanceReport = () => {
 
     React.useEffect(() => {
         const func = async () => {
-            const { data } = await axios.get(`http://localhost:4000/api/v1/employees/mylist?page=${page}&limit=${99999999}`, {
+            const { data } = await axios.get(`http://52.86.15.74:4000/api/v1/employees/mylist?page=${page}&limit=${99999999}`, {
                 withCredentials: true
             });
             setpdfData(data);

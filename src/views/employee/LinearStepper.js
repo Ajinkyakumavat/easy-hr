@@ -1011,7 +1011,7 @@ const LinaerStepper = () => {
         };
         //console.log(selectFile);
         axios
-            .post('http://localhost:4000/api/v1/employees/csv', csvData, config)
+            .post('http://52.86.15.74:4000/api/v1/employees/csv', csvData, config)
             .then((res) => {
                 console.log(res);
                 toast.success('CSV uploaded successfully!');
@@ -1043,7 +1043,7 @@ const LinaerStepper = () => {
                 return;
             }
             dispatch(addEmployee(methods.getValues()));
-            fetch('http://localhost:4000/api/v1/employees/new')
+            fetch('http://52.86.15.74:4000/api/v1/employees/new')
                 .then((data) => data.json())
                 .then((res) => {
                     //console.log(res);

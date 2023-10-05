@@ -21,7 +21,7 @@ export default function MachineSwitch(props) {
     React.useEffect(() => {
         /* eslint no-underscore-dangle: 0 */
         axios
-            .get(`http://localhost:4000/api/v1/employee/attendance/mylist/${date?.getMonth() + 1}/${date?.getFullYear()}/${data?.employee}`, {
+            .get(`http://52.86.15.74:4000/api/v1/employee/attendance/mylist/${date?.getMonth() + 1}/${date?.getFullYear()}/${data?.employee}`, {
                 withCredentials: true
             })
             .then((res) => {

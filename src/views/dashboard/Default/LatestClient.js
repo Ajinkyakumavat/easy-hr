@@ -34,7 +34,7 @@ const LatestClients = ({ isLoading, role }) => {
         }
 
         async function getdata() {
-            const { data } = await axios.get(`http://localhost:4000/api/v1/employees/mylist?page=${1}&sorted=${-1}&limit=${3}`, {
+            const { data } = await axios.get(`http://52.86.15.74:4000/api/v1/employees/mylist?page=${1}&sorted=${-1}&limit=${3}`, {
                 withCredentials: true
             });
 

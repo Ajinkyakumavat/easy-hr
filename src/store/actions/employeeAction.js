@@ -72,7 +72,7 @@ export const addEmployee = (userData) => async (dispatch) => {
                 aboveBasic: userData.aboveBasic 
             }
         };
-        const { data } = await axios.post(' http://localhost:4000/api/v1/employees/new', y, config);
+        const { data } = await axios.post(' http://52.86.15.74:4000/api/v1/employees/new', y, config);
         toast.success('Details Submitted Successfully!');
         dispatch({
             type: ADD_EMPLOYEE_SUCCESS,
@@ -93,7 +93,7 @@ export const myEmployee = (page, limit, keyword) => async (dispatch) => {
         dispatch({ type: MY_EMPLOYEE_REQUEST });
 
         const { data } = await axios.get(
-            `http://localhost:4000/api/v1/employees/mylist?page=${page}${limit && '&limit=' + limit}${
+            `http://52.86.15.74:4000/api/v1/employees/mylist?page=${page}${limit && '&limit=' + limit}${
                 keyword ? '&keyword=' + keyword : ''
             }&searchBy=${'personalDetails.fullName,companyDetails.aadhaarNo'}`,
             {
@@ -118,7 +118,7 @@ export const updateEmployee = (id, data) => async (dispatch) => {
     try {
         dispatch({ type: UPDATE_COMPANY_REQUEST });
 
-        const x = await axios.put(`http://localhost:4000/api/v1/employee/${id}`, data, {
+        const x = await axios.put(`http://52.86.15.74:4000/api/v1/employee/${id}`, data, {
             withCredentials: true
         });
         dispatch({
@@ -144,7 +144,7 @@ export const addRoles = (userData) => async (dispatch) => {
             }
         };
 
-        const { data } = await axios.post('http://localhost:4000/api/v1/admin/register', userData, config);
+        const { data } = await axios.post('http://52.86.15.74:4000/api/v1/admin/register', userData, config);
         dispatch({
             type: ADD_ROLES_SUCCESS,
             payload: data

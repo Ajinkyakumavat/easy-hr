@@ -62,7 +62,7 @@ const Dashboard = () => {
 
         axios
             .get(
-                `http://localhost:4000/api/v1/admin/employee/allEmployees?limit=${9999999999}`,
+                `http://52.86.15.74:4000/api/v1/admin/employee/allEmployees?limit=${9999999999}`,
                 {
                     withCredentials: true
                 }
@@ -75,7 +75,7 @@ const Dashboard = () => {
 
         axios
             .get(
-                `http://localhost:4000/api/v1/employee/attendance/mylist/${new Date().getMonth() + 1}/${new Date().getFullYear()}?limit=${9999999999}`,
+                `http://52.86.15.74:4000/api/v1/employee/attendance/mylist/${new Date().getMonth() + 1}/${new Date().getFullYear()}?limit=${9999999999}`,
                 {
                     withCredentials: true
                 }

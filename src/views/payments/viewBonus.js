@@ -46,12 +46,12 @@ const ViewBonus = () => {
     React.useEffect(() => {
         dispatch(getCompany());
         async function getAtt() {
-            const x = await axios.get(`http://localhost:4000/api/v1/employee/bonus/mylist/${date.getFullYear()}?page=${page}`, {
+            const x = await axios.get(`http://52.86.15.74:4000/api/v1/employee/bonus/mylist/${date.getFullYear()}?page=${page}`, {
                 withCredentials: true
             });
             setAttend(x.data);
 
-            const y = await axios.get(`http://localhost:4000/api/v1/employee/bonus/mylist/${date.getFullYear()}?page=${0}&limit=${999999999}`, {
+            const y = await axios.get(`http://52.86.15.74:4000/api/v1/employee/bonus/mylist/${date.getFullYear()}?page=${0}&limit=${999999999}`, {
                 withCredentials: true
             });
             setPdfAttend(y.data);
